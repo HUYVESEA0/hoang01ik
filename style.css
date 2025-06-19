@@ -1,0 +1,931 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+  --text-light: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.8);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--dark-gradient);
+  color: var(--text-light);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Animated Background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.floating-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: float 20s infinite linear;
+}
+
+.shape-1 {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.4), transparent);
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(240, 147, 251, 0.3), transparent);
+  top: 60%;
+  left: 80%;
+  animation-delay: -5s;
+}
+
+.shape-3 {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(79, 172, 254, 0.5), transparent);
+  top: 80%;
+  left: 20%;
+  animation-delay: -10s;
+}
+
+.shape-4 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(245, 87, 108, 0.3), transparent);
+  top: 30%;
+  left: 70%;
+  animation-delay: -15s;
+}
+
+.shape-5 {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.2), transparent);
+  top: 10%;
+  left: 50%;
+  animation-delay: -8s;
+}
+
+.shape-6 {
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle, rgba(118, 75, 162, 0.4), transparent);
+  top: 70%;
+  left: 60%;
+  animation-delay: -12s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-20px) rotate(90deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-40px) rotate(180deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-20px) rotate(270deg);
+    opacity: 1;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.avatar-container {
+  position: relative;
+  margin-bottom: 3rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 3;
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+}
+
+.avatar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ring-1 {
+  width: 220px;
+  height: 220px;
+  border-color: rgba(102, 126, 234, 0.6);
+  animation: rotate 10s linear infinite;
+}
+
+.ring-2 {
+  width: 250px;
+  height: 250px;
+  border-color: rgba(240, 147, 251, 0.4);
+  animation: rotate 15s linear infinite reverse;
+}
+
+.ring-3 {
+  width: 280px;
+  height: 280px;
+  border-color: rgba(79, 172, 254, 0.3);
+  animation: rotate 20s linear infinite;
+}
+
+.avatar-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.3), transparent);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+.hero-content {
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.title-line {
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+.title-underline {
+  height: 4px;
+  background: var(--primary-gradient);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+  animation: expandWidth 2s ease-out 1s both;
+  width: 0;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes expandWidth {
+  to {
+    width: 200px;
+  }
+}
+
+.hero-description {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.typing-text {
+  display: inline-block;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+  color: #667eea;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.badge {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out 1.5s both;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.badge:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+  border-color: rgba(102, 126, 234, 0.6);
+}
+
+.badge:hover::before {
+  left: 100%;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 5rem 0;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.title-text {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.decoration-line {
+  width: 50px;
+  height: 2px;
+  background: var(--accent-gradient);
+  border-radius: 1px;
+}
+
+.decoration-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Contact Cards với màu sắc brand chính thức */
+.contact-card {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out both;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.contact-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.contact-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.contact-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.contact-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.contact-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.4s ease;
+  border-radius: 24px;
+  transform: scale(0.8);
+}
+
+/* Màu sắc brand chính thức cho từng platform */
+.contact-card.facebook .card-background {
+  background: linear-gradient(135deg, #1877f2 0%, #42a5f5 100%);
+  box-shadow: 0 0 50px rgba(24, 119, 242, 0.4);
+}
+
+.contact-card.zalo .card-background {
+  background: linear-gradient(135deg, #0068ff 0%, #0084ff 100%);
+  box-shadow: 0 0 50px rgba(0, 104, 255, 0.4);
+}
+
+.contact-card.discord .card-background {
+  background: linear-gradient(135deg, #5865f2 0%, #7289da 100%);
+  box-shadow: 0 0 50px rgba(88, 101, 242, 0.4);
+}
+
+.contact-card.email .card-background {
+  background: linear-gradient(135deg, #ea4335 0%, #ff6b6b 100%);
+  box-shadow: 0 0 50px rgba(234, 67, 53, 0.4);
+}
+
+.contact-card.phone .card-background {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  box-shadow: 0 0 50px rgba(37, 211, 102, 0.4);
+}
+
+.contact-card.special-card .card-background {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  box-shadow: 0 0 50px rgba(255, 107, 53, 0.4);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.card-icon {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  font-size: 1.8rem;
+  transition: all 0.4s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Màu icon cho từng platform */
+.contact-card.facebook .card-icon {
+  color: #1877f2;
+  background: rgba(24, 119, 242, 0.1);
+  border-color: rgba(24, 119, 242, 0.3);
+}
+
+.contact-card.zalo .card-icon {
+  color: #0068ff;
+  background: rgba(0, 104, 255, 0.1);
+  border-color: rgba(0, 104, 255, 0.3);
+}
+
+.contact-card.discord .card-icon {
+  color: #5865f2;
+  background: rgba(88, 101, 242, 0.1);
+  border-color: rgba(88, 101, 242, 0.3);
+}
+
+.contact-card.email .card-icon {
+  color: #ea4335;
+  background: rgba(234, 67, 53, 0.1);
+  border-color: rgba(234, 67, 53, 0.3);
+}
+
+.contact-card.phone .card-icon {
+  color: #25d366;
+  background: rgba(37, 211, 102, 0.1);
+  border-color: rgba(37, 211, 102, 0.3);
+}
+
+.contact-card.special-card .card-icon {
+  color: #ff6b35;
+  background: rgba(255, 107, 53, 0.1);
+  border-color: rgba(255, 107, 53, 0.3);
+}
+
+.icon-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.contact-card.facebook .icon-glow {
+  background: radial-gradient(circle, rgba(24, 119, 242, 0.3), transparent);
+}
+
+.contact-card.zalo .icon-glow {
+  background: radial-gradient(circle, rgba(0, 104, 255, 0.3), transparent);
+}
+
+.contact-card.discord .icon-glow {
+  background: radial-gradient(circle, rgba(88, 101, 242, 0.3), transparent);
+}
+
+.contact-card.email .icon-glow {
+  background: radial-gradient(circle, rgba(234, 67, 53, 0.3), transparent);
+}
+
+.contact-card.phone .icon-glow {
+  background: radial-gradient(circle, rgba(37, 211, 102, 0.3), transparent);
+}
+
+.contact-card.special-card .icon-glow {
+  background: radial-gradient(circle, rgba(255, 107, 53, 0.3), transparent);
+}
+
+.card-info {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  transition: color 0.3s ease;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.card-arrow {
+  font-size: 1.3rem;
+  opacity: 0.6;
+  transition: all 0.4s ease;
+  transform: translateX(-5px);
+}
+
+.card-hover-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+/* Hover Effects nâng cao */
+.contact-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-card:hover .card-background {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.contact-card:hover .card-icon {
+  transform: scale(1.15) rotate(5deg);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card:hover .icon-glow {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.contact-card:hover .card-arrow {
+  transform: translateX(8px) scale(1.1);
+  opacity: 1;
+  color: white;
+}
+
+.contact-card:hover .card-hover-effect {
+  left: 100%;
+}
+
+.contact-card:hover .card-title {
+  color: white;
+}
+
+.contact-card:hover .card-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Active/Focus states */
+.contact-card:active {
+  transform: translateY(-8px) scale(1.01);
+}
+
+/* Footer */
+.footer {
+  padding: 3rem 0;
+  text-align: center;
+  animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-text {
+  font-size: 1rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-icon {
+  animation: rotate 3s linear infinite;
+}
+
+.footer-year {
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.footer-decoration {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-decoration .decoration-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.footer-decoration .decoration-dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.footer-decoration .decoration-dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.scroll-line {
+  height: 100%;
+  background: var(--primary-gradient);
+  width: 0%;
+  transition: width 0.3s ease;
+  animation: scrollProgress 1s ease-out;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Responsive Design cải thiện */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .hero-section {
+    padding: 1rem 0;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ring-1 {
+    width: 170px;
+    height: 170px;
+  }
+  .ring-2 {
+    width: 200px;
+    height: 200px;
+  }
+  .ring-3 {
+    width: 230px;
+    height: 230px;
+  }
+
+  .hero-badges {
+    gap: 0.8rem;
+    max-width: 400px;
+    margin: 2rem auto 0;
+  }
+
+  .badge {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: calc(50% - 0.4rem);
+    text-align: center;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-card {
+    padding: 1.8rem;
+  }
+
+  .card-content {
+    gap: 1.2rem;
+  }
+
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .ring-1 {
+    width: 140px;
+    height: 140px;
+  }
+  .ring-2 {
+    width: 170px;
+    height: 170px;
+  }
+  .ring-3 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-badges {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+    max-width: 280px;
+  }
+
+  .badge {
+    flex: none;
+    min-width: auto;
+    text-align: center;
+    padding: 0.8rem 1rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+
+  .card-content {
+    gap: 1rem;
+  }
+
+  .card-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.4rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .card-arrow {
+    font-size: 1.1rem;
+  }
+}
+
+/* Thêm hiệu ứng cho mobile touch */
+@media (hover: none) and (pointer: coarse) {
+  .contact-card:active {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .contact-card:active .card-background {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  .contact-card:active .card-icon {
+    transform: scale(1.1);
+    color: white;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-gradient);
+}
+
+/* Selection */
+::selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(102, 126, 234, 0.3);
+  color: white;
+}
