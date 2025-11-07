@@ -3,195 +3,426 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liên hệ với tôi - Phạm Văn Hoàng</title>
+    <title>Phạm Văn Hoàng - Full Stack Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
-            <div class="shape shape-5"></div>
-            <div class="shape shape-6"></div>
-        </div>
-    </div>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Header Section -->
-        <header class="hero-section">
-            <div class="avatar-container">
-                <div class="avatar-ring ring-1"></div>
-                <div class="avatar-ring ring-2"></div>
-                <div class="avatar-ring ring-3"></div>
-                <img src="logo.jpg" alt="Ảnh đại diện" class="avatar">
-                <div class="avatar-glow"></div>
+    <!-- Particle Background -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <!-- Grid Overlay -->
+    <div class="grid-overlay"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">&lt;PH/&gt;</span>
+                <span class="logo-cursor">_</span>
             </div>
-            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
             <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Available for opportunities</span>
+                </div>
                 <h1 class="hero-title">
-                    <span class="title-line">Phạm Văn Hoàng</span>
-                    <div class="title-underline"></div>
+                    <span class="title-line-1">Hi, I'm</span>
+                    <span class="title-line-2">
+                        <span class="gradient-text">Phạm Văn Hoàng</span>
+                        <span class="cursor-blink">|</span>
+                    </span>
+                    <span class="title-line-3">
+                        <span class="typing-text"></span>
+                    </span>
                 </h1>
                 <p class="hero-description">
-                    <span class="typing-text">Lập trình viên đam mê công nghệ</span>
-                    <span class="cursor">|</span>
+                    Full Stack Developer passionate about creating innovative solutions 
+                    and building exceptional digital experiences.
                 </p>
-                <div class="hero-badges">
-                    <span class="badge">💻 Full-stack Developer</span>
-                    <span class="badge">🚀 Tech Enthusiast</span>
-                    <span class="badge">✨ Creative Coder</span>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <span>View Work</span>
+                        <i class="fas fa-code"></i>
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://web.facebook.com/profile.php?id=100087199562387" target="_blank" class="social-link" data-tooltip="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://zalo.me/0862362216" target="_blank" class="social-link" data-tooltip="Zalo">
+                        <i class="fas fa-comment-dots"></i>
+                    </a>
+                    <a href="https://discord.com/users/610814826398089227" target="_blank" class="social-link" data-tooltip="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="mailto:pvh10ik@gmail.com" class="social-link" data-tooltip="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
-        </header>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <div class="tech-ring ring-1"></div>
+                    <div class="tech-ring ring-2"></div>
+                    <div class="tech-ring ring-3"></div>
+                    <div class="image-glow"></div>
+                    <img src="logo.jpg" alt="Phạm Văn Hoàng" class="avatar-img">
+                    <div class="floating-elements">
+                        <div class="float-element element-1">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <div class="float-element element-2">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="float-element element-3">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="float-element element-4">
+                            <i class="fab fa-python"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <main class="contact-section">
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
             <div class="section-header">
+                <span class="section-number">01</span>
                 <h2 class="section-title">
-                    <span class="title-text">Kết nối với tôi</span>
-                    <div class="title-decoration">
-                        <div class="decoration-line"></div>
-                        <div class="decoration-dot"></div>
-                        <div class="decoration-line"></div>
-                    </div>
+                    <span class="title-accent">About</span> Me
                 </h2>
-                <p class="section-subtitle">Hãy liên hệ qua các kênh sau để hợp tác nhé! 🤝</p>
+                <div class="title-line"></div>
             </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="text-block">
+                        <h3>Full Stack Developer</h3>
+                        <p>
+                            Tôi là một lập trình viên đam mê công nghệ với kinh nghiệm phát triển 
+                            ứng dụng web full-stack. Tôi luôn tìm kiếm những thách thức mới và 
+                            không ngừng học hỏi để nâng cao kỹ năng.
+                        </p>
+                    </div>
+                    <div class="text-block">
+                        <h3>Passion & Goals</h3>
+                        <p>
+                            Đam mê của tôi là tạo ra những sản phẩm công nghệ có ý nghĩa, 
+                            giải quyết các vấn đề thực tế và mang lại trải nghiệm tuyệt vời 
+                            cho người dùng.
+                        </p>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="3">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="100">0</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="contact-grid">
-                <a href="https://www.facebook.com/phamvanhoang01ik" target="_blank" class="contact-card facebook" data-platform="facebook">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">
+                    Tech <span class="title-accent">Stack</span>
+                </h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card" data-skill="Frontend">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="skill-title">Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill="Backend">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="skill-title">Backend</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Express</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">GraphQL</span>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill="Database">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="skill-title">Database</h3>
+                    <div class="skill-tags">
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Redis</span>
+                    </div>
+                </div>
+                <div class="skill-card" data-skill="Tools">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="skill-title">Tools & Others</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Git</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">
+                    Featured <span class="title-accent">Projects</span>
+                </h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Web Application</span>
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">
+                            Full-stack e-commerce solution with modern UI/UX, 
+                            payment integration, and admin dashboard.
+                        </p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Mobile App</span>
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">
+                            Cross-platform task management application with 
+                            real-time synchronization and collaboration features.
+                        </p>
+                        <div class="project-tech">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                            <span>Redux</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Dashboard</span>
+                        <h3 class="project-title">Analytics Dashboard</h3>
+                        <p class="project-description">
+                            Real-time analytics dashboard with data visualization, 
+                            custom reports, and interactive charts.
+                        </p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Python</span>
+                            <span>D3.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">
+                    Get In <span class="title-accent">Touch</span>
+                </h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-intro">
+                        I'm always open to discussing new projects, creative ideas, 
+                        or opportunities to be part of your visions.
+                    </p>
+                    <div class="contact-methods">
+                        <a href="mailto:pvh10ik@gmail.com" class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <span class="method-label">Email</span>
+                                <span class="method-value">pvh10ik@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+84862362216" class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-info">
+                                <span class="method-label">Phone</span>
+                                <span class="method-value">0862 362 216</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-links">
+                    <a href="https://web.facebook.com/profile.php?id=100087199562387" target="_blank" class="contact-link facebook">
+                        <div class="link-icon">
                             <i class="fab fa-facebook-f"></i>
-                            <div class="icon-glow"></div>
                         </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Facebook</h3>
-                            <p class="card-subtitle">Kết bạn và trò chuyện</p>
+                        <div class="link-content">
+                            <span class="link-title">Facebook</span>
+                            <span class="link-subtitle">Connect with me</span>
                         </div>
-                        <div class="card-arrow">
+                        <div class="link-arrow">
                             <i class="fas fa-arrow-right"></i>
                         </div>
-                    </div>
-                    <div class="card-hover-effect"></div>
-                </a>
-
-                <a href="https://zalo.me/0862362216" target="_blank" class="contact-card zalo" data-platform="zalo">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
+                    </a>
+                    <a href="https://zalo.me/0862362216" target="_blank" class="contact-link zalo">
+                        <div class="link-icon">
                             <i class="fas fa-comment-dots"></i>
-                            <div class="icon-glow"></div>
                         </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Zalo</h3>
-                            <p class="card-subtitle">Chat nhanh và tiện lợi</p>
+                        <div class="link-content">
+                            <span class="link-title">Zalo</span>
+                            <span class="link-subtitle">Quick chat</span>
                         </div>
-                        <div class="card-arrow">
+                        <div class="link-arrow">
                             <i class="fas fa-arrow-right"></i>
                         </div>
-                    </div>
-                    <div class="card-hover-effect"></div>
-                </a>
-
-                <a href="https://discord.com/users/610814826398089227" target="_blank" class="contact-card discord" data-platform="discord">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
+                    </a>
+                    <a href="https://discord.com/users/610814826398089227" target="_blank" class="contact-link discord">
+                        <div class="link-icon">
                             <i class="fab fa-discord"></i>
-                            <div class="icon-glow"></div>
                         </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Discord</h3>
-                            <p class="card-subtitle">Gaming & Community</p>
+                        <div class="link-content">
+                            <span class="link-title">Discord</span>
+                            <span class="link-subtitle">Gaming & Community</span>
                         </div>
-                        <div class="card-arrow">
+                        <div class="link-arrow">
                             <i class="fas fa-arrow-right"></i>
                         </div>
-                    </div>
-                    <div class="card-hover-effect"></div>
-                </a>
-
-                <a href="mailto:pvh10ik@gmail.com" class="contact-card email" data-platform="email">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-envelope"></i>
-                            <div class="icon-glow"></div>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Email</h3>
-                            <p class="card-subtitle">pvh10ik@gmail.com</p>
-                        </div>
-                        <div class="card-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="card-hover-effect"></div>
-                </a>
-
-                <a href="tel:+84862362216" class="contact-card phone" data-platform="phone">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-phone"></i>
-                            <div class="icon-glow"></div>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Điện thoại</h3>
-                            <p class="card-subtitle">0862 362 216</p>
-                        </div>
-                        <div class="card-arrow">
-                            <i class="fas fa-arrow-right"></i>
-                        </div>
-                    </div>
-                    <div class="card-hover-effect"></div>
-                </a>
-
-                <div class="contact-card special-card">
-                    <div class="card-background"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i class="fas fa-heart"></i>
-                            <div class="icon-glow"></div>
-                        </div>
-                        <div class="card-info">
-                            <h3 class="card-title">Cảm ơn bạn!</h3>
-                            <p class="card-subtitle">Rất mong được hợp tác ✨</p>
-                        </div>
-                    </div>
-                    <div class="card-hover-effect"></div>
+                    </a>
                 </div>
             </div>
-        </main>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
             <div class="footer-content">
-                <p class="footer-text">
-                    <span class="footer-icon">💫</span>
-                    Made with love & passion
-                    <span class="footer-year">© 2025</span>
-                </p>
-                <div class="footer-decoration">
-                    <div class="decoration-dot"></div>
-                    <div class="decoration-dot"></div>
-                    <div class="decoration-dot"></div>
+                <div class="footer-text">
+                    <p>&copy; 2025 Phạm Văn Hoàng. Built with <span class="heart">❤</span> and passion.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#skills" class="footer-link">Skills</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-        <div class="scroll-line"></div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
